@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dregxorra - Professional Debt Recovery Services</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Global Styles */
@@ -42,10 +41,7 @@
             padding: 0 20px;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
+        h1, h2, h3, h4 {
             margin-bottom: 15px;
             line-height: 1.2;
         }
@@ -138,17 +134,9 @@
             padding: 15px 20px;
         }
 
-        .logo h1 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 0;
-        }
-
-        .logo p {
-            font-size: 0.7rem;
-            color: var(--text-light);
-            margin-bottom: 0;
-            letter-spacing: 1px;
+        .logo img {
+            width: 150px;
+            height: auto;
         }
 
         .nav-links {
@@ -183,11 +171,6 @@
 
         .nav-links a:hover:after {
             width: 100%;
-        }
-
-        .nav-links .btn {
-            margin-left: 20px;
-            padding: 8px 15px;
         }
 
         .hamburger {
@@ -325,82 +308,31 @@
             color: var(--primary-color);
         }
 
-        /* Clients Section */
-        .client-logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            margin: 50px 0;
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        .client-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .client-logo:hover {
-            filter: grayscale(0);
-            opacity: 1;
-        }
-
-        .testimonials {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-        }
-
-        .testimonial {
-            display: none;
-            padding: 30px;
+        .service-card {
             background-color: var(--white);
-            border-radius: 10px;
+            padding: 30px;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 5px;
             box-shadow: var(--box-shadow);
-            margin-bottom: 30px;
-        }
-
-        .testimonial.active {
-            display: block;
-        }
-
-        .testimonial p {
-            font-size: 1.1rem;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .client-info strong {
-            color: var(--primary-color);
-            display: block;
-        }
-
-        .client-info span {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .testimonial-nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            background-color: #bdc3c7;
-            border-radius: 50%;
-            cursor: pointer;
             transition: var(--transition);
         }
 
-        .dot.active {
-            background-color: var(--secondary-color);
+        .service-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
         }
 
         /* Contact Section */
@@ -468,7 +400,7 @@
         footer {
             background-color: var(--dark-color);
             color: var(--white);
-            padding: 60px 0 0;
+            padding: 40px 0 20px;
         }
 
         .footer-content {
@@ -550,26 +482,22 @@
         @media (max-width: 768px) {
             .hamburger {
                 display: block;
+                z-index: 1001;
             }
 
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
+                width: 70%;
+                height: 100vh;
                 background-color: var(--white);
                 flex-direction: column;
                 align-items: center;
-                justify-content: flex-start;
-                padding-top: 40px;
+                justify-content: center;
                 transition: var(--transition);
-            }
-
-            .contact-btn {
-                position: absolute;
-                top: 20px;
-                display: none;
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
             }
 
             .nav-links.active {
@@ -594,8 +522,6 @@
                 font-size: 2rem;
             }
 
-        
-
             .hero p {
                 font-size: 1rem;
             }
@@ -611,27 +537,11 @@
             .modules-grid {
                 grid-template-columns: 1fr;
             }
-        }
 
-        .logo img {
-            width: 150px;
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
-
-        .container h2 {
-            margin-top:-50px ;
-            color: var(--white);
-            margin-bottom: 30px;
-        }
-
-        alert {
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-    
     </style>
 </head>
 
@@ -640,18 +550,17 @@
     <nav id="navbar">
         <div class="container">
             <div class="logo">
-                <img src="asset/Drexorra.jpg">
+                <img src="asset/Drexorra.jpg" alt="Drexorra Logo">
             </div>
-            <ul class="nav-links">          
+            <ul class="nav-links">
                 <li><a href="#Home">Home</a></li>
-               <li><a href="#about">About</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#modules">Key Modules</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
-
             </ul>
-            
- <div class="hamburger">
-     <i class="fas fa-bars"></i>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
@@ -660,7 +569,7 @@
     <header class="hero" id="Home">
         <div class="container">
             <h1>Professional Debt Recovery Services</h1>
-            <p>Maximizing your recoveries with ethical, effective collection strategies</p>
+            <p>A unique combination of Seamless delivery, advanced analytics and Automated strategies</p>
             <a href="#contact" class="btn btn-large">Get Started Today</a>
         </div>
     </header>
@@ -671,17 +580,22 @@
             <h2 style="color: var(--primary-color); margin-top: 0;">About Drexorra</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Dregxorra is a leading debt recovery agency specializing in commercial and consumer debt
-                        collection. With over 15 years of industry experience, we've developed proven strategies to
-                        recover your outstanding debts while maintaining positive customer relationships.</p>
-                    <p>Our team of certified professionals combines legal expertise with cutting-edge technology to
-                        deliver results that exceed industry standards. We operate with complete transparency and adhere
-                        to all regulatory requirements.</p>
+                    <p> Drexorra Global is a modern Debt Collection institution that helps Banks, NBFCs, and Businesses
+                        manage and recover their outstanding dues effectively.
+                        Our mission is to deliver "Smart, Ethical, and Result-Oriented Collection Services" while
+                        maintaining respect and dignity for borrowers.
+                        By leveraging the latest Analytics, and Digital Communication Tools, we make the collection
+                        process faster, safer, and more efficient.</p>
+
                     <ul>
-                        <li><i class="fas fa-check-circle"></i> Licensed and compliant in all 50 states</li>
-                        <li><i class="fas fa-check-circle"></i> 85% average recovery rate</li>
-                        <li><i class="fas fa-check-circle"></i> Ethical collection practices</li>
-                        <li><i class="fas fa-check-circle"></i> Customized recovery solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Data protection</li>
+                        <li><i class="fas fa-check-circle"></i> Purging</li>
+                        <li><i class="fas fa-check-circle"></i> Safe access</li>
+                        <li><i class="fas fa-check-circle"></i> Exceptional data analytics capabilities</li>
+                        <li><i class="fas fa-check-circle"></i> Accurate reporting. Performance monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Dashboards and MIS.</li>
+                        <li><i class="fas fa-check-circle"></i> SKIP identification</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced TC monitoring tools</li>
                     </ul>
                 </div>
                 <div class="about-image">
@@ -730,98 +644,68 @@
     <!-- Key Modules Section -->
     <section id="modules" class="section">
         <div class="container">
-            <h2>Key Service Modules</h2>
+            <h2 style="color: var(--primary-color);">Key Service Modules</h2>
             <p class="section-intro">Our comprehensive service offerings address all aspects of debt recovery.</p>
 
             <div class="modules-grid">
                 <div class="module-card">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <h3>Commercial Collections</h3>
-                    <p>B2B debt recovery for outstanding invoices, loans, and commercial accounts.</p>
+                    <i class="fa-solid fa-address-card"></i>
+                    <h3>Customer Profiling Module</h3>
                 </div>
                 <div class="module-card">
                     <i class="fas fa-user-tie"></i>
-                    <h3>Consumer Collections</h3>
-                    <p>Ethical recovery of personal debts including credit cards, loans, and medical bills.</p>
+                    <h3>Digital Communication Channel Performance Module</h3>
                 </div>
                 <div class="module-card">
-                    <i class="fas fa-gavel"></i>
-                    <h3>Legal Recovery</h3>
-                    <p>Full-service legal collection including judgments, garnishments, and asset recovery.</p>
+                    <i class="fa-solid fa-tty"></i>
+                    <h3>Digital Communication Prioritization Module</h3>
                 </div>
                 <div class="module-card">
                     <i class="fas fa-chart-line"></i>
-                    <h3>Debt Portfolio Management</h3>
-                    <p>Comprehensive management of debt portfolios with detailed reporting.</p>
+                    <h3>Quality Monitoring Module</h3>
                 </div>
                 <div class="module-card">
                     <i class="fas fa-search"></i>
-                    <h3>Skip Tracing</h3>
-                    <p>Advanced location services to find debtors who have moved or changed contact information.</p>
+                    <h3>Process Efficiency Module</h3>
+                </div>
+                <div class="module-card">
+                    <i class="fa-solid fa-bullseye"></i>
+                    <h3>Dialer Strategy Module</h3>
                 </div>
                 <div class="module-card">
                     <i class="fas fa-lock"></i>
-                    <h3>Compliance Monitoring</h3>
-                    <p>Ensuring all collection activities meet current regulatory requirements.</p>
+                    <h3>Strategy Validation Module</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Clients Section -->
-    <!-- <section id="clients" class="section light-bg">
+    <!-- Services Section -->
+    <section id="services" class="section light-bg">
         <div class="container">
-            <h2>Our Valued Clients</h2>
-            <p class="section-intro">Trusted by leading financial institutions and businesses across industries.</p>
+            <h2 style="color: var(--primary-color);">Our Services</h2>
+            <p class="section-intro">Comprehensive debt recovery solutions tailored to your needs.</p>
 
-            <div class="client-logos">
-                <div class="client-logo"><img src="https://via.placeholder.com/150x80?text=Bank+One" alt="Bank One">
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Field Collection</h3>
+                    <p>Our Ground Recovery Support with trained field agents</p>
                 </div>
-                <div class="client-logo"><img src="https://via.placeholder.com/150x80?text=City+Credit"
-                        alt="City Credit"></div>
-                <div class="client-logo"><img src="https://via.placeholder.com/150x80?text=MediCare+Group"
-                        alt="MediCare Group"></div>
-                <div class="client-logo"><img src="https://via.placeholder.com/150x80?text=National+Retail"
-                        alt="National Retail"></div>
-                <div class="client-logo"><img src="https://via.placeholder.com/150x80?text=Prime+Loans"
-                        alt="Prime Loans"></div>
-            </div>
-
-            <div class="testimonials">
-                <h3>What Our Clients Say</h3>
-                <div class="testimonial active">
-                    <p>"Dregxorra recovered 78% of our aged receivables portfolio within 6 months, far exceeding our
-                        expectations. Their professional approach maintained our customer relationships while getting
-                        results."</p>
-                    <div class="client-info">
-                        <strong>Sarah Johnson</strong>
-                        <span>CFO, National Retail Corp</span>
-                    </div>
+                <div class="service-card">
+                    <h3>Risk Assessment & Fraud Control</h3>
+                    <p>Early warning signals, Fraud detection, Repayment monitoring</p>
                 </div>
-                <div class="testimonial">
-                    <p>"Their compliance-first approach gave us confidence we wouldn't face regulatory issues. The
-                        detailed reporting and transparency throughout the process was exceptional."</p>
-                    <div class="client-info">
-                        <strong>Michael Chen</strong>
-                        <span>Director of Collections, City Credit</span>
-                    </div>
+                <div class="service-card">
+                    <h3>Digital Collection Tools</h3>
+                    <p>SMS, Email, WhatsApp, IVR & Automated reminders</p>
                 </div>
-                <div class="testimonial">
-                    <p>"We've tried several agencies over the years, but Dregxorra's recovery rates are consistently
-                        20-30% higher than competitors. They've become an extension of our team."</p>
-                    <div class="client-info">
-                        <strong>David Wilson</strong>
-                        <span>VP Operations, Prime Loans</span>
-                    </div>
-                </div>
-                <div class="testimonial-nav">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                    <span class="dot" data-index="2"></span>
+                <div class="service-card">
+                    <h3>Legal Support</h3>
+                    <p>Assistance for Recovery through legal procedures</p>
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section dark-bg">
@@ -832,16 +716,9 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Our Office</h3>
-
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Recovery Way, Suite 400<br>Financial District, NY 10005
-                    </p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Recovery Way, Suite 400<br>Financial District, NY 10005</p>
                     <p><i class="fas fa-phone"></i> (800) 555-9876</p>
                     <p><i class="fas fa-envelope"></i> info@drexorra.com</p>
-
-                    <!-- <h3>Business Hours</h3>
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM EST<br>
-                        Saturday: 9:00 AM - 2:00 PM EST<br>
-                        Sunday: Closed</p> -->
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
@@ -880,8 +757,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>DREXORRA</h3>
-                    <p>Professional debt recovery services with a proven track record of success and ethical collection
-                        practices.</p>
+                    <p>Professional debt recovery services with a proven track record of success and ethical collection practices.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -894,7 +770,6 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#execution">Our Process</a></li>
                         <li><a href="#modules">Services</a></li>
-                        <li><a href="#clients">Clients</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -909,12 +784,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Dregxorra Debt Recovery Agency. All Rights Reserved.</p>
+                <p>&copy; 2025 Drexorra Debt Recovery Agency. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>document.addEventListener('DOMContentLoaded', function () {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
             // Sticky Navigation
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', function () {
@@ -928,17 +804,29 @@
             // Mobile Menu Toggle
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
+            const body = document.querySelector('body');
 
             hamburger.addEventListener('click', function () {
                 navLinks.classList.toggle('active');
-                hamburger.classList.toggle('fa-times');
+                hamburger.classList.toggle('active');
+                
+                // Toggle between hamburger and close icon
+                if (hamburger.classList.contains('active')) {
+                    hamburger.innerHTML = '<i class="fas fa-times"></i>';
+                    body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                } else {
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                    body.style.overflow = 'auto';
+                }
             });
 
             // Close mobile menu when clicking a link
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', function () {
                     navLinks.classList.remove('active');
-                    hamburger.classList.remove('fa-times');
+                    hamburger.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                    body.style.overflow = 'auto';
                 });
             });
 
@@ -948,6 +836,8 @@
                     e.preventDefault();
 
                     const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
                     const targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
@@ -958,33 +848,6 @@
                     }
                 });
             });
-
-            // Testimonial Slider
-            const testimonials = document.querySelectorAll('.testimonial');
-            const dots = document.querySelectorAll('.dot');
-
-            if (testimonials.length > 0) {
-                let currentTestimonial = 0;
-
-                function showTestimonial(index) {
-                    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
-                    dots.forEach(dot => dot.classList.remove('active'));
-
-                    testimonials[index].classList.add('active');
-                    dots[index].classList.add('active');
-                    currentTestimonial = index;
-                }
-
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => showTestimonial(index));
-                });
-
-                // Auto-rotate testimonials
-                setInterval(() => {
-                    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-                    showTestimonial(currentTestimonial);
-                }, 5000);
-            }
 
             // Form submission
             const contactForm = document.getElementById('contactForm');
@@ -1013,7 +876,7 @@
                     contactForm.reset();
                 });
             }
-        }); </script>
+        });
+    </script>
 </body>
-
 </html>
