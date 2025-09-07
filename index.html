@@ -5,551 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dregxorra - Professional Debt Recovery Services</title>
-    <meta name="description"
-    content="Drexorra brings next-gen digital collectibles, NFTs, and AI-powered experiences to modern collectors.It's a Smart dept solution with A.I Automation">
-  <meta property="og:title" content="Drexorra Global - Smart Digital Collectibles" />
-  <meta property="og:description" content="Next-gen collectibles with AI magic." />
-  <meta property="og:url" content="https://collectiq.co.in" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-      <link rel="icon" href="asset/Drexorra.jpg" type="image/png" />
-    <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #e74c3c;
-            --accent-color: #3498db;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --text-light: #7f8c8d;
-            --white: #fff;
-            --black: #000;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-color);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1, h2, h3, h4 {
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #c0392b;
-            transform: translateY(-3px);
-            box-shadow: var(--box-shadow);
-        }
-
-        .btn-large {
-            padding: 15px 30px;
-            font-size: 1.1rem;
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-intro {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            text-align: center;
-            color: var(--text-light);
-        }
-
-        .dark-bg {
-            background-color: var(--primary-color);
-            color: var(--white);
-        }
-
-        .dark-bg .section-intro {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .light-bg {
-            background-color: var(--light-color);
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        nav.scrolled {
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-        }
-
-        .logo img {
-            width: 150px;
-            height: auto;
-        }
-
-        .nav-links {
-            display: flex;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            color: var(--primary-color);
-            font-weight: 600;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--secondary-color);
-            bottom: -5px;
-            left: 0;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-
-        .hamburger {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            cursor: pointer;
-            display: none;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-            height: 100vh;
-            min-height: 600px;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-
-        .about-text ul {
-            margin: 20px 0;
-        }
-
-        .about-text li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .about-text i {
-            color: var(--secondary-color);
-            margin-right: 10px;
-        }
-
-        /* Execution Section */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .step {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .step:hover {
-            transform: translateY(-10px);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
-        }
-
-        .step h3 {
-            color: var(--white);
-            margin-bottom: 15px;
-        }
-
-        /* Key Modules Section */
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .module-card {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        .module-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .module-card i {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-
-        .module-card h3 {
-            color: var(--primary-color);
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background-color: var(--white);
-            padding: 30px;
-            border-left: 5px solid var(--secondary-color);
-            border-radius: 5px;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 30px;
-            color: var(--white);
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-            width: 20px;
-        }
-
-        .contact-form {
-            flex: 1;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: var(--white);
-            padding: 40px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-about h3 {
-            color: var(--white);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: var(--white);
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        .footer-links h3,
-        .footer-legal h3 {
-            color: var(--white);
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-links li,
-        .footer-legal li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a,
-        .footer-legal a {
-            color: #bdc3c7;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover,
-        .footer-legal a:hover {
-            color: var(--secondary-color);
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bdc3c7;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-
-            .contact-container {
-                flex-direction: column;
-            }
-
-            .contact-info {
-                margin-bottom: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-                z-index: 1001;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 70%;
-                height: 100vh;
-                background-color: var(--white);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: var(--transition);
-                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .btn-large {
-                padding: 12px 25px;
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr;
-            }
-
-            .modules-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <script src="https://lottie.host/83af48f9-01a1-4bfc-bd52-4b7df0ca7042/rdxNA5heZd.json"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -562,10 +20,38 @@
             <ul class="nav-links">
                 <li><a href="#Home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#modules">Key Modules</a></li>
-                <li><a href="#services">Services</a></li>
+                <li class="dropdown-parent">
+                    <a href="#modules">Key Modules ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="#modules">Customer Profiling Module</a></li>
+                        <li><a href="#modules">Digital Communication Channel Performance Module</a></li>
+                        <li><a href="#modules">Digital Communication Prioritization Module</a></li>
+                        <li><a href="#modules">Quality Monitoring Module</a></li>
+                        <li><a href="#modules">Process Efficiency Module</a></li>
+                        <li><a href="#modules">Dialer Strategy Module</a></li>
+                        <li><a href="#modules">Strategy Validation Module</a></li>
+                    </ul>
+
+                </li>
+                <!-- Services with dropdown -->
+                <li class="dropdown-parent">
+                    <a href="#services">Services ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="#dialer">Dialer & Connectivity</a></li>
+                        <li><a href="#omnichannel">Omnichannel Communication</a></li>
+                        <li><a href="#reporting">Reporting & Analytics</a></li>
+                        <li><a href="#skip">Skip Tracing</a></li>
+                        <li><a href="#team">Team & Supervision</a></li>
+                        <li><a href="#field">Field Support</a></li>
+                        <li><a href="#security">Data Security</a></li>
+                        <li><a href="#tech">Technology</a></li>
+                        <li><a href="#experience">Customer Experience</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -606,8 +92,10 @@
                     </ul>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                        alt="Professional team meeting">
+                    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+                        type="module"></script>
+                    <dotlottie-wc src="https://lottie.host/83af48f9-01a1-4bfc-bd52-4b7df0ca7042/rdxNA5heZd.json"
+                        style="width: 500px;height: 500px" speed="1" autoplay loop></dotlottie-wc>
                 </div>
             </div>
         </div>
@@ -690,26 +178,89 @@
     <!-- Services Section -->
     <section id="services" class="section light-bg">
         <div class="container">
-            <h2 style="color: var(--primary-color);">Our Services</h2>
-            <p class="section-intro">Comprehensive debt recovery solutions tailored to your needs.</p>
+            <h1>Collection Agency – Service Provisions</h1>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Field Collection</h3>
-                    <p>Our Ground Recovery Support with trained field agents</p>
+            <div class="grid">
+
+                <div class="card" id="dialer">
+                    <h2>📞 Dialer & Connectivity</h2>
+                    <ul>
+                        <li>AI-powered dialer with real-time agent tracking.</li>
+                        <li>Advanced analytics, call recordings & CDR insights.</li>
+                        <li>Seamless mobility for remote operations.</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Risk Assessment & Fraud Control</h3>
-                    <p>Early warning signals, Fraud detection, Repayment monitoring</p>
+
+                <div class="card" id="omnichannel">
+                    <h2>💬 Omnichannel Communication</h2>
+                    <ul>
+                        <li>Bulk SMS scheduling with smart delivery optimization.</li>
+                        <li>Verified WhatsApp Meta templates.</li>
+                        <li>Automated email marketing with tracking & analytics.</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Digital Collection Tools</h3>
-                    <p>SMS, Email, WhatsApp, IVR & Automated reminders</p>
+
+                <div class="card" id="reporting">
+                    <h2>📊 Reporting & Analytics</h2>
+                    <ul>
+                        <li>Transparent MIS dashboards & specialist reports.</li>
+                        <li>Milestone-driven progress & performance tracking.</li>
+                        <li>AI-driven predictive insights for recovery optimization.</li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <h3>Legal Support</h3>
-                    <p>Assistance for Recovery through legal procedures</p>
+
+                <div class="card" id="skip">
+                    <h2>🧭 Skip Tracing</h2>
+                    <ul>
+                        <li>Next-gen tracing tools for hard-to-reach customers.</li>
+                        <li>Data enrichment via Naukri, Shine & allied databases.</li>
+                    </ul>
                 </div>
+
+                <div class="card" id="team">
+                    <h2>👥 Team & Supervision</h2>
+                    <ul>
+                        <li>Supervisors with 5+ years experience.</li>
+                        <li>Quality team with live dashboards & call audits.</li>
+                        <li>Certified training programs for agents.</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="field">
+                    <h2>🏢 Field Support</h2>
+                    <ul>
+                        <li>On-ground officers across Delhi NCR for verifications.</li>
+                        <li>Support for collections & field engagements.</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="security">
+                    <h2>🔒 Data Security & Compliance</h2>
+                    <ul>
+                        <li>Monthly data purging & system sanitization.</li>
+                        <li>Enterprise-grade site protector tools.</li>
+                        <li>100% adherence to industry regulations.</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="tech">
+                    <h2>☁️ Technology & Infrastructure</h2>
+                    <ul>
+                        <li>Cloud-hosted dialer & CRM (24x7 availability).</li>
+                        <li>Smart IVR systems with escalation handling.</li>
+                        <li>Backup servers with 99.9% uptime.</li>
+                    </ul>
+                </div>
+
+                <div class="card" id="experience">
+                    <h2>🤝 Customer Experience</h2>
+                    <ul>
+                        <li>Empathy-first engagement ensuring dignity.</li>
+                        <li>Structured escalation matrix.</li>
+                        <li>Portfolio-segmented recovery strategies.</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
@@ -723,23 +274,24 @@
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Our Office</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Recovery Way, Suite 400<br>Financial District, NY 10005</p>
-                    <p><i class="fas fa-phone"></i> (800) 555-9876</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Recovery Way, Suite 400<br>Financial District, NY 10005
+                    </p>
+                    <p><i class="fas fa-phone"></i>7860430573</p>
                     <p><i class="fas fa-envelope"></i> info@drexorra.com</p>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form action="https://formspree.io/f/xqadwbbv" method="POST" id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" placeholder="Your Phone">
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone">
                         </div>
                         <div class="form-group">
-                            <select id="service" required>
+                            <select id="service" name="service" required>
                                 <option value="">Select Service</option>
                                 <option value="commercial">Commercial Collections</option>
                                 <option value="consumer">Consumer Collections</option>
@@ -749,10 +301,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message"
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -764,7 +318,8 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>DREXORRA</h3>
-                    <p>Professional debt recovery services with a proven track record of success and ethical collection practices.</p>
+                    <p>Professional debt recovery services with a proven track record of success and ethical collection
+                        practices.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -816,7 +371,7 @@
             hamburger.addEventListener('click', function () {
                 navLinks.classList.toggle('active');
                 hamburger.classList.toggle('active');
-                
+
                 // Toggle between hamburger and close icon
                 if (hamburger.classList.contains('active')) {
                     hamburger.innerHTML = '<i class="fas fa-times"></i>';
@@ -836,22 +391,33 @@
                     body.style.overflow = 'auto';
                 });
             });
-
-            // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-
                     const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
                     const targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
+                        // Smooth scroll
                         window.scrollTo({
                             top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
                         });
+
+                        // Remove previous highlights
+                        document.querySelectorAll('.card').forEach(card => {
+                            card.classList.remove('highlight');
+                        });
+
+                        // Add highlight after scroll delay
+                        setTimeout(() => {
+                            targetElement.classList.add('highlight');
+                        }, 500);
+
+                        // Remove highlight after 2.5s
+                        setTimeout(() => {
+                            targetElement.classList.remove('highlight');
+                        }, 2500);
                     }
                 });
             });
@@ -884,8 +450,11 @@
                 });
             }
         });
+
+
+
     </script>
+
 </body>
+
 </html>
-
-
