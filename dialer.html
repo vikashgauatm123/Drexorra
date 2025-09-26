@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://lottie.host/4b6b1d52-8da6-45e8-866d-3fc531f87049/N2mSwhLOU8.lottie"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+        .container {
+           
+            flex-direction: row;
+            justify-content: center;
+        }
+        .content{
+            flex: 1;
+            padding-top: 100px;
+            text-align: left;
+            max-width: 600px;
+        }
+      
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="container">
+        <div class="content">
+            <h1> Dialar & Connectvity</h1>
+            <h3> AI-powered dialer with real-time agent tracking, advanced analytics, call recordings, and CDR insights.
+
+                Seamless mobility integration enabling remote flexibility and uninterrupted operations.
+
+            </h3>
+
+
+
+        </div>
+        <div class="animation">
+
+
+        </div>
+    </div>
+
+
+
+
+    <div id="footer"></div>
+    <script>
+        // Load Navbar
+        fetch("navbar.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("navbar").innerHTML = data);
+
+        // Load Footer
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+</body>
+
+</html>
