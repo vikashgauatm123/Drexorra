@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drexorra - Execution</title>
   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
   
@@ -13,58 +13,154 @@
   <div id="navbar"></div>
 
   <!-- Page Content -->
-   <section id="modules" class="section">
-        <div class="container">
-            <h2 style="color: var(--primary-color);">Key Service Modules</h2>
-            <p class="section-intro">Our comprehensive service offerings address all aspects of debt recovery.</p>
+  <section id="modules" class="section">
+    <div class="container">
+      <h2 style="color: var(--primary-color);">Key Service Modules</h2>
+      <p class="section-intro">Our comprehensive service offerings address all aspects of debt recovery.</p>
 
-            <div class="modules-grid">
-                <div class="module-card">
-                    <i class="fa-solid fa-address-card"></i>
-                    <h3>Customer Profiling Module</h3>
-                </div>
-                <div class="module-card">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Digital Communication Channel Performance Module</h3>
-                </div>
-                <div class="module-card">
-                    <i class="fa-solid fa-tty"></i>
-                    <h3>Digital Communication Prioritization Module</h3>
-                </div>
-                <div class="module-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Quality Monitoring Module</h3>
-                </div>
-                <div class="module-card">
-                    <i class="fas fa-search"></i>
-                    <h3>Process Efficiency Module</h3>
-                </div>
-                <div class="module-card">
-                    <i class="fa-solid fa-bullseye"></i>
-                    <h3>Dialer Strategy Module</h3>
-                </div>
-                <div class="module-card">
-                    <i class="fas fa-lock"></i>
-                    <h3>Strategy Validation Module</h3>
-                </div>
-            </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <i class="fa-solid fa-address-card"></i>
+          <h3>Customer Profiling Module</h3>
         </div>
-    </section>
+        <div class="module-card">
+          <i class="fas fa-user-tie"></i>
+          <h3>Digital Communication Channel Performance Module</h3>
+        </div>
+        <div class="module-card">
+          <i class="fa-solid fa-tty"></i>
+          <h3>Digital Communication Prioritization Module</h3>
+        </div>
+        <div class="module-card">
+          <i class="fas fa-chart-line"></i>
+          <h3>Quality Monitoring Module</h3>
+        </div>
+        <div class="module-card">
+          <i class="fas fa-search"></i>
+          <h3>Process Efficiency Module</h3>
+        </div>
+        <div class="module-card">
+          <i class="fa-solid fa-bullseye"></i>
+          <h3>Dialer Strategy Module</h3>
+        </div>
+        <div class="module-card">
+          <i class="fas fa-lock"></i>
+          <h3>Strategy Validation Module</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer placeholder -->
   <div id="footer"></div>
 
-  <!-- Script to load navbar/footer -->
+  <!-- Script to load navbar/footer with full support -->
   <script>
-    // Load Navbar
-    fetch("navbar.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("navbar").innerHTML = data);
-
-    // Load Footer
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer").innerHTML = data);
+    function loadHTML(file, elementId, callback) {
+      fetch(file)
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+          return response.text();
+        })
+        .then(data => {
+          const container = document.getElementById(elementId);
+          container.innerHTML = data;
+          
+          // Execute inline scripts
+          const scripts = container.querySelectorAll('script');
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement('script');
+            
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+              newScript.async = false;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            
+            // Copy all attributes
+            Array.from(oldScript.attributes).forEach(attr => {
+              if (attr.name !== 'src') {
+                newScript.setAttribute(attr.name, attr.value);
+              }
+            });
+            
+            document.body.appendChild(newScript);
+            oldScript.remove();
+          });
+          
+          // Call callback after loading
+          if (callback) {
+            setTimeout(callback, 100);
+          }
+        })
+        .catch(error => {
+          console.error(`Error loading ${file}:`, error);
+          document.getElementById(elementId).innerHTML = 
+            `<div style="padding: 20px; color: red;">Error loading ${file}. Please refresh the page.</div>`;
+        });
+    }
+    
+    function initializeNavbar() {
+      // Initialize mobile menu toggle
+      const menuToggle = document.querySelector('.menu-toggle, .hamburger, .mobile-toggle, [class*="toggle"]');
+      const navMenu = document.querySelector('.nav-menu, .nav-links, nav ul, [class*="menu"]');
+      
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          navMenu.classList.toggle('active');
+          this.classList.toggle('active');
+          console.log('Menu toggled');
+        });
+      }
+      
+      // Make sure all links work
+      const allLinks = document.querySelectorAll('#navbar a');
+      allLinks.forEach(link => {
+        link.style.pointerEvents = 'auto';
+        link.style.cursor = 'pointer';
+      });
+      
+      // Handle logo specifically
+      const logos = document.querySelectorAll('#navbar img, #navbar .logo, #navbar .brand');
+      logos.forEach(logo => {
+        logo.style.cursor = 'pointer';
+        logo.style.pointerEvents = 'auto';
+        
+        // If logo is wrapped in a link, ensure link works
+        if (logo.parentElement.tagName === 'A') {
+          logo.parentElement.style.pointerEvents = 'auto';
+          logo.parentElement.style.cursor = 'pointer';
+        }
+      });
+      
+      console.log('Navbar initialized');
+    }
+    
+    function initializeFooter() {
+      // Make sure all footer links work
+      const footerLinks = document.querySelectorAll('#footer a');
+      footerLinks.forEach(link => {
+        link.style.pointerEvents = 'auto';
+        link.style.cursor = 'pointer';
+      });
+      
+      console.log('Footer initialized');
+    }
+    
+    // Load components
+    window.addEventListener('DOMContentLoaded', function() {
+      loadHTML('navbar.html', 'navbar', initializeNavbar);
+      loadHTML('footer.html', 'footer', initializeFooter);
+    });
+    
+    // Fallback: If DOM already loaded
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      loadHTML('navbar.html', 'navbar', initializeNavbar);
+      loadHTML('footer.html', 'footer', initializeFooter);
+    }
   </script>
 </body>
 </html>
