@@ -26,7 +26,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--light-color);
-    overflow-x: hidden;
+    
 }
 
 .container {
@@ -709,6 +709,10 @@ h1 {
         max-width: 400px;
         margin: 0 auto;
         /* center on screen */
+    }
+
+    body{
+        overflow-x: hidden;
     }
 
     .about-image dotlottie-wc {
