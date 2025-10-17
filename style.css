@@ -1466,6 +1466,11 @@ h1 {
         height: auto !important;
     }
 
+    #navbar {
+        overflow-x: hidden;
+        width: fit-content;
+    }
+
     /* Hide about section animation on very small devices */
     @media (max-width: 400px) {
         .about-image {
