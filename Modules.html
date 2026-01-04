@@ -1,19 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drexorra - Execution</title>
+  <meta name="description"
+    content="Drexorra Key Service Modules - Customer Profiling, Digital Communication, Quality Monitoring, Process Efficiency, and more professional debt recovery solutions.">
+  <meta name="keywords"
+    content="debt recovery modules, customer profiling, digital communication, quality monitoring, dialer strategy, debt collection services">
+  <meta name="author" content="Drexorra Global">
+
+  <title>Drexorra - Key Service Modules</title>
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-  
-  <!-- Navbar placeholder -->
-  <div id="navbar"></div>
+
+  <!-- Sticky Navigation Bar -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="asset/text-removebg-preview.png" alt="Drexorra Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="Modules.html">Key Modules</a></li>
+        <li class="dropdown-parent">
+          <a href="index.html#services">Services ▾</a>
+          <ul class="dropdown">
+            <li><a href="dialer.html">Dialer & Connectivity</a></li>
+            <li><a href="omnichannel.html">Omnichannel Communication</a></li>
+            <li><a href="reporting.html">Reporting & Analytics</a></li>
+            <li><a href="skip-tracing.html">Skip Tracing</a></li>
+            <li><a href="team-supervision.html">Team & Supervision</a></li>
+            <li><a href="field-support.html">Field Support</a></li>
+            <li><a href="data-security.html">Data Security</a></li>
+            <li><a href="technology.html">Technology</a></li>
+            <li><a href="customer-experience.html">Customer Experience</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
 
   <!-- Page Content -->
-  <section id="modules" class="section">
+  <section id="modules" class="section" style="padding-top: 120px;">
     <div class="container">
       <h2 style="color: var(--primary-color);">Key Service Modules</h2>
       <p class="section-intro">Our comprehensive service offerings address all aspects of debt recovery.</p>
@@ -51,116 +90,104 @@
     </div>
   </section>
 
-  <!-- Footer placeholder -->
-  <div id="footer"></div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>DREXORRA</h3>
+          <p>Professional debt recovery services with a proven track record of success and ethical collection practices.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#Home">Our Process</a></li>
+            <li><a href="Modules.html">Key Modules</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-legal">
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Compliance</a></li>
+            <li><a href="#">Licenses</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Drexorra Debt Recovery Agency. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-  <!-- Script to load navbar/footer with full support -->
+  <!-- Navigation Script -->
   <script>
-    function loadHTML(file, elementId, callback) {
-      fetch(file)
-        .then(response => {
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-          return response.text();
-        })
-        .then(data => {
-          const container = document.getElementById(elementId);
-          container.innerHTML = data;
-          
-          // Execute inline scripts
-          const scripts = container.querySelectorAll('script');
-          scripts.forEach(oldScript => {
-            const newScript = document.createElement('script');
-            
-            if (oldScript.src) {
-              newScript.src = oldScript.src;
-              newScript.async = false;
-            } else {
-              newScript.textContent = oldScript.textContent;
-            }
-            
-            // Copy all attributes
-            Array.from(oldScript.attributes).forEach(attr => {
-              if (attr.name !== 'src') {
-                newScript.setAttribute(attr.name, attr.value);
-              }
-            });
-            
-            document.body.appendChild(newScript);
-            oldScript.remove();
-          });
-          
-          // Call callback after loading
-          if (callback) {
-            setTimeout(callback, 100);
-          }
-        })
-        .catch(error => {
-          console.error(`Error loading ${file}:`, error);
-          document.getElementById(elementId).innerHTML = 
-            `<div style="padding: 20px; color: red;">Error loading ${file}. Please refresh the page.</div>`;
-        });
-    }
-    
-    function initializeNavbar() {
-      // Initialize mobile menu toggle
-      const menuToggle = document.querySelector('.menu-toggle, .hamburger, .mobile-toggle, [class*="toggle"]');
-      const navMenu = document.querySelector('.nav-menu, .nav-links, nav ul, [class*="menu"]');
-      
-      if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          navMenu.classList.toggle('active');
-          this.classList.toggle('active');
-          console.log('Menu toggled');
-        });
-      }
-      
-      // Make sure all links work
-      const allLinks = document.querySelectorAll('#navbar a');
-      allLinks.forEach(link => {
-        link.style.pointerEvents = 'auto';
-        link.style.cursor = 'pointer';
-      });
-      
-      // Handle logo specifically
-      const logos = document.querySelectorAll('#navbar img, #navbar .logo, #navbar .brand');
-      logos.forEach(logo => {
-        logo.style.cursor = 'pointer';
-        logo.style.pointerEvents = 'auto';
-        
-        // If logo is wrapped in a link, ensure link works
-        if (logo.parentElement.tagName === 'A') {
-          logo.parentElement.style.pointerEvents = 'auto';
-          logo.parentElement.style.cursor = 'pointer';
+    document.addEventListener('DOMContentLoaded', function () {
+      // Sticky Navigation
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 100) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
         }
       });
-      
-      console.log('Navbar initialized');
-    }
-    
-    function initializeFooter() {
-      // Make sure all footer links work
-      const footerLinks = document.querySelectorAll('#footer a');
-      footerLinks.forEach(link => {
-        link.style.pointerEvents = 'auto';
-        link.style.cursor = 'pointer';
+
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      const body = document.querySelector('body');
+
+      hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+
+        // Toggle between hamburger and close icon
+        if (hamburger.classList.contains('active')) {
+          hamburger.innerHTML = '<i class="fas fa-times"></i>';
+          body.style.overflow = 'hidden';
+        } else {
+          hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+          body.style.overflow = 'auto';
+        }
       });
-      
-      console.log('Footer initialized');
-    }
-    
-    // Load components
-    window.addEventListener('DOMContentLoaded', function() {
-      loadHTML('navbar.html', 'navbar', initializeNavbar);
-      loadHTML('footer.html', 'footer', initializeFooter);
+
+      // Close mobile menu when clicking a link (except dropdown parent)
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        // Skip the Services dropdown parent link
+        if (!link.parentElement.classList.contains('dropdown-parent')) {
+          link.addEventListener('click', function () {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            body.style.overflow = 'auto';
+          });
+        }
+      });
+
+      // Mobile dropdown toggle (click-based instead of hover)
+      const dropdownParents = document.querySelectorAll('.dropdown-parent');
+      dropdownParents.forEach(parent => {
+        const parentLink = parent.querySelector('a');
+        parentLink.addEventListener('click', function (e) {
+          // On mobile, toggle dropdown instead of navigating
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            parent.classList.toggle('active');
+          }
+        });
+      });
     });
-    
-    // Fallback: If DOM already loaded
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-      loadHTML('navbar.html', 'navbar', initializeNavbar);
-      loadHTML('footer.html', 'footer', initializeFooter);
-    }
   </script>
 </body>
+
 </html>
